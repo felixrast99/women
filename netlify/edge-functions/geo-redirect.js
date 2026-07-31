@@ -3,7 +3,7 @@ export default async (request, context) => {
   const country = context.geo?.country?.code || "UNKNOWN";
 
   const geoLinks = {
-    "FR": "https://www.onthatass-deals.com/Q2S9MT/93BZXZ/?sub1=gmail",
+    "FR": "https://www.onthatass-deals.com/Q2S9MT/GN8S4K/?sub1=gmail",
     "DE": "https://www.onthatass-deals.com/Q2S9MT/C2WBD8/"
   };
 
