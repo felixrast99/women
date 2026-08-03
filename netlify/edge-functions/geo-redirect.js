@@ -1,18 +1,26 @@
 export default async (request, context) => {
+  const url = new URL(request.url);
 
-  const country = context.geo?.country?.code || "UNKNOWN";
+  const name = url.searchParams.get("name") || "gmail";
+  const encodedName = encodeURIComponent(name);
 
-  const geoLinks = {
-    "FR": "https://www.onthatass-deals.com/Q2S9MT/GN8S4K/?sub1=gmail",
-    "DE": "https://www.onthatass-deals.com/Q2S9MT/C2WBD8/"
-  };
+  const country = context.geo?.country?.code;
 
-  if (geoLinks[country]) {
-    return Response.redirect(geoLinks[country], 302);
+  if (country === "FR") {
+    return Response.redirect(
+      `https://www.onthatass-deals.com/Q2S9MT/93BZXZ/?sub1=${encodedName}`,
+      302
+    );
+  }
+
+  if (country === "DE") {
+    return Response.redirect(
+      `https://www.onthatass-deals.com/Q2S9MT/C2WBD8/?sub1=${encodedName}`,
+      302
+    );
   }
 
   return new Response("Offer not available in your country", {
     status: 200,
-    headers: { "content-type": "text/plain" }
   });
 };
