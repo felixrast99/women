@@ -8,7 +8,7 @@ export default async (request, context) => {
 
   if (country === "FR") {
     return Response.redirect(
-      ` https://www.onthatass-deals.com/Q2S9MT/93BZXZ/?sub1=${encodedName}`,
+      ` https://www.onthatass-deals.com/Q2S9MT/GN8S4K/?sub1=${encodedName}`,
       302
     );
   }
